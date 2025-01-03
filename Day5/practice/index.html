@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM Manipulation Practice</h1>
+  
+  <section>
+    <h2>Buttons and Events</h2>
+    <button id="changeTextButton">Change Text</button>
+    <p id="textParagraph">Click the button above to change this text.</p>
+  </section>
+
+  <section>
+    <h2>Input and Forms</h2>
+    <label for="userInput">Enter something: </label>
+    <input type="text" id="userInput" />
+    <button id="displayInputButton">Display Input</button>
+    <p id="displayArea"></p>
+  </section>
+
+  <section>
+    <h2>Lists</h2>
+    <ul id="itemList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button id="addItemButton">Add Item</button>
+    <button id="removeItemButton">Remove Last Item</button>
+  </section>
+
+  <section>
+    <h2>Table</h2>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="addRowButton">Add Row</button>
+    <button id="highlightTableButton">Highlight Rows</button>
+  </section>
+
+  <section>
+    <h2>Toggle Visibility</h2>
+    <button id="toggleVisibilityButton">Toggle Visibility</button>
+    <p id="toggleParagraph">You can hide or show this paragraph using the button above.</p>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>
