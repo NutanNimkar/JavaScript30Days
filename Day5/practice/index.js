@@ -54,3 +54,43 @@ const toggleParagraph = document.getElementById('toggleParagraph');
 toggle.addEventListener('click', () => {
     toggleParagraph.classList.toggle('hidden');
 });
+
+const person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+        console.log(this);
+}}
+const person2 = {
+    name: "Jane",
+    age: 25,
+}
+
+person.greet.call(person2);
+person.greet();
+
+
+
+function outerFunction(outerVar) {
+    return function innerFunction(innerVar) {
+        console.log("Hello " + outerVar);
+        console.log("Goodbye " + innerVar);
+    }
+}
+
+const newFunction = outerFunction("World");
+
+
+function sum(value) {
+    let total = value;
+    
+    return function(valB){
+      if (valB === undefined){
+        return total
+      }else{
+        return sum(valB + total)
+      }
+    }
+  }
+console.log(sum(1)(2)())

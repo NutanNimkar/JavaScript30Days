@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+    }
+
+    /* Form Section */
+    form {
+        margin-bottom: 20px;
+    }
+
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* th {
+  background-color: ;
+} */
+    td {
+        border: 1px solid #ddd;
+    }
+
+    /* Accordion Section */
+    .accordion-item {
+        margin-bottom: 10px;
+    }
+
+    .accordion-title {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .accordion-content {
+        padding: 10px;
+        transition: 0.3s;
+    }
+    .accordion-content-hidden{
+        display: none;
+        padding: 10px;
+        transition: 0.3;
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.carousel-track-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:focus {
+  outline: none;
+}
+
+.current-slide {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+</style>
+
+<body>
+    <h1>Practice Project</h1>
+
+    <!-- Form Section -->
+    <section>
+        <h2>Form</h2>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <span class="error" id="nameError"></span><br><br>
+
+            <label for="mobile">Mobile:</label>
+            <input type="text" id="mobile">
+            <span class="error" id="mobileError"></span><br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+            <span class="error" id="emailError"></span><br><br>
+
+            <button type="button" id="submitBtn">Submit</button>
+        </form>
+
+        <h3>Added Data</h3>
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Accordion Section -->
+    <section>
+        <h2>Accordion</h2>
+        <label>
+            <input type="checkbox" id="allowMultiple">
+            Allow Multiple Sections
+        </label>
+        <div id="accordion">
+            <div class="accordion-item">
+                <button class="accordion-title">Section 1</button>
+                <div class="accordion-content">Content for Section 1</div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-title">Section 2</button>
+                <div class="accordion-content">Content for Section 2</div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-title">Section 3</button>
+                <div class="accordion-content">Content for Section 3</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="carousel">
+            <button class="carousel-button prev" id="prevBtn">&#10094;</button>
+            <div class="carousel-track-container">
+              <ul class="carousel-track">
+                <li class="carousel-slide current-slide">
+                  <img src="https://images.unsplash.com/photo-1607528971899-2e89e6c0ec69?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1">
+                </li>
+                <li class="carousel-slide">
+                  <img src="https://plus.unsplash.com/premium_photo-1682310075673-b408eb1ca6fd?q=80&w=3012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 2">
+                </li>
+                <li class="carousel-slide">
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 3">
+                </li>
+              </ul>
+            </div>
+            <button class="carousel-button next" id="nextBtn">&#10095;</button>
+          </div>
+        
+    </section>
+
+    <script src="script.js"></script>
+    <script src="accordian.js"></script>
+    <script src="carousel.js"></script>
+</body>
+
+</html>
